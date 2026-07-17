@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Prakash Singh, Ph.D. — Technology Strategy &amp; Transformation Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&displ[...]
+<style>
+  :root{
+    --navy-950:#0A1526;
+    --navy-900:#0F213B;
+    --navy-800:#173257;
+    --navy-700:#1D3A5F;
+    --slate-500:#5B7A99;
+    --slate-300:#9AB0C4;
+    --teal-600:#1F8A85;
+    --teal-500:#2AA39D;
+    --amber-500:#B98A3D;
+    --bg:#F4F6F8;
+    --paper:#FFFFFF;
+    --ink:#152232;
+    --ink-soft:#495B6E;
+    --line:#DDE4EA;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Newsreader',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--navy-950);
+  }
+  .mono{ font-family:'IBM Plex Mono',monospace; letter-spacing:0.02em; }
+  a{ color:inherit; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{ padding:0 20px; } }
+
+  /* ---------- Skip / focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--teal-600);
+    outline-offset:3px;
+  }
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--navy-950); color:#fff; padding:10px 16px; z-index:200;
+  }
+  .skip-link:focus{ left:16px; top:16px; }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(244,246,248,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px; max-width:1080px; margin:0 auto;
+  }
+  .nav-name{ font-family:'Newsreader',serif; font-size:18px; font-weight:600; color:var(--navy-950); }
+  .nav-links{ display:flex; gap:28px; list-style:none; margin:0; padding:0; }
+  .nav-links a{
+    text-decoration:none; font-size:13px; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500;
+    padding-bottom:3px; border-bottom:1px solid transparent;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .nav-links a:hover{ color:var(--navy-950); border-color:var(--teal-600); }
+  .nav-cta{
+    font-size:13px; letter-spacing:0.03em; text-transform:uppercase; font-weight:600;
+    background:var(--navy-950); color:#fff; padding:9px 16px; text-decoration:none;
+    border-radius:var(--radius);
+  }
+  @media (max-width:760px){ .nav-links{ display:none; } }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 62%, var(--navy-800) 100%);
+    color:#EAF0F5;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1080px; margin:0 auto; padding:88px 32px 72px;
+    display:grid; grid-template-columns:1fr; gap:36px;
+  }
+  .hero-signal{
+    position:absolute; top:0; right:0; bottom:0; width:46%;
+    opacity:0.55; pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--teal-500); margin:0 0 18px;
+  }
+  .hero h1{
+    color:#fff; font-size:clamp(34px,5vw,54px); line-height:1.08; margin:0 0 14px; max-width:820px;
+  }
+  .hero .role{
+    font-size:clamp(17px,2vw,20px); color:var(--slate-300); font-weight:400; margin:0 0 26px; max-width:640px;
+  }
+  .hero .lede{
+    max-width:640px; font-size:16px; color:#C7D5E1; margin:0 0 34px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--teal-600); color:#04140F; text-decoration:none; font-weight:600;
+    padding:13px 22px; border-radius:var(--radius); font-size:14px; letter-spacing:0.01em;
+    transition:background .2s ease;
+  }
+  .btn-primary:hover{ background:var(--teal-500); }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.28); color:#fff; text-decoration:none; font-weight:500;
+    padding:13px 22px; border-radius:var(--radius); font-size:14px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .btn-ghost:hover{ border-color:#fff; background:rgba(255,255,255,0.06); }
+
+  .stat-band{
+    border-top:1px solid rgba(255,255,255,0.14);
+    margin-top:52px; padding-top:34px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  }
+  @media (max-width:760px){ .stat-band{ grid-template-columns:repeat(2,1fr); } }
+  .stat-num{ font-family:'Newsreader',serif; font-size:clamp(26px,3.4vw,36px); color:#fff; font-weight:500; }
+  .stat-label{ font-size:12.5px; color:var(--slate-300); margin-top:4px; max-width:20ch; }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:76px 0; }
+  .section-head{ margin-bottom:38px; max-width:640px; }
+  .section-num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal-600);
+    letter-spacing:0.1em; text-transform:uppercase; margin:0 0 10px;
+  }
+  .section-head h2{ font-size:clamp(24px,3vw,32px); margin:0 0 12px; }
+  .section-head p{ color:var(--ink-soft); font-size:15px; margin:0; }
+
+  /* ---------- About ---------- */
+  .about{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+  @media (max-width:800px){ .about-grid{ grid-template-columns:1fr; gap:28px; } }
+  .about p{ font-size:15.5px; color:var(--ink-soft); margin:0 0 16px; }
+  .cert-list{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+  .cert-list li{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--navy-800);
+    background:var(--bg); border:1px solid var(--line); padding:6px 10px; border-radius:var(--radius);
+  }
+  .about-label{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--slate-500); margin:0 0 14px;
+  }
+
+  /* ---------- Competencies ---------- */
+  .tag-grid{ display:flex; flex-wrap:wrap; gap:10px; }
+  .tag{
+    font-size:13.5px; color:var(--navy-900); background:var(--paper); border:1px solid var(--line);
+    padding:9px 14px; border-radius:var(--radius);
+  }
+  .tech-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:12px; }
+  @media (max-width:800px){ .tech-groups{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .tech-groups{ grid-template-columns:1fr; } }
+  .tech-card{ background:var(--paper); border:1px solid var(--line); padding:22px 20px; border-radius:var(--radius); }
+  .tech-card h3{ font-size:14px; margin:0 0 12px; text-transform:uppercase; letter-spacing:0.03em; color:var(--navy-800); font-family:'Inter',sans-serif; font-weight:600; }
+  .tech-card p{ font-size:13.5px; color:var(--ink-soft); margin:0; line-height:1.65; }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{ position:relative; margin-top:8px; }
+  .timeline::before{
+    content:''; position:absolute; left:11px; top:6px; bottom:6px; width:1px; background:var(--line);
+  }
+  .tl-item{ position:relative; padding-left:44px; margin-bottom:44px; }
+  .tl-item:last-child{ margin-bottom:0; }
+  .tl-node{
+    position:absolute; left:0; top:4px; width:24px; height:24px; border-radius:50%;
+    background:var(--paper); border:1px solid var(--teal-600);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tl-node::after{ content:''; width:8px; height:8px; border-radius:50%; background:var(--teal-600); }
+  .tl-current .tl-node{ background:var(--teal-600); }
+  .tl-current .tl-node::after{ background:#fff; }
+  .tl-meta{
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px;
+  }
+  .tl-role{ font-family:'Newsreader',serif; font-size:19px; color:var(--navy-950); font-weight:600; margin:0; }
+  .tl-dates{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--teal-600); }
+  .tl-org{ font-size:14px; color:var(--ink-soft); margin:0 0 14px; font-weight:500; }
+  .tl-bullets{ margin:0; padding-left:18px; }
+  .tl-bullets li{ font-size:14.5px; color:var(--ink-soft); margin-bottom:8px; }
+  .tl-bullets li::marker{ color:var(--teal-600); }
+
+  /* ---------- Education / Certs ---------- */
+  .edu-cert{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .ec-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:56px; }
+  @media (max-width:800px){ .ec-grid{ grid-template-columns:1fr; gap:36px; } }
+  .edu-item{ padding:16px 0; border-bottom:1px solid var(--line); }
+  .edu-item:last-child{ border-bottom:none; }
+  .edu-degree{ font-family:'Newsreader',serif; font-size:16.5px; color:var(--navy-950); margin:0 0 2px; }
+  .edu-school{ font-size:13.5px; color:var(--ink-soft); margin:0; }
+  .cert-badges{ display:flex; flex-wrap:wrap; gap:10px; align-content:flex-start; }
+  .badge{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:#fff; background:var(--navy-900);
+    padding:8px 12px; border-radius:var(--radius);
+  }
+
+  /* ---------- Contact / Footer ---------- */
+  footer{
+    background:var(--navy-950); color:#EAF0F5; padding:64px 0 40px;
+  }
+  .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start; }
+  @media (max-width:760px){ .contact-grid{ grid-template-columns:1fr; } }
+  footer h2{ color:#fff; font-size:clamp(24px,3vw,30px); margin:0 0 14px; }
+  footer p{ color:var(--slate-300); font-size:15px; max-width:46ch; margin:0 0 26px; }
+  .contact-list{ list-style:none; margin:0; padding:0; }
+  .contact-list li{ margin-bottom:14px; }
+  .contact-list a{
+    text-decoration:none; color:#fff; font-size:15px; display:flex; align-items:center; gap:10px;
+  }
+  .contact-list a:hover{ color:var(--teal-500); }
+  .contact-list .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--slate-500); text-transform:uppercase; letter-spacing:0.08em; min-width:56px; display:inline-block; }
+  .foot-bottom{
+    margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12);
+    font-size:12.5px; color:var(--slate-500); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  ::selection{ background:var(--teal-600); color:#fff; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-name">Shri P. Singh</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-label="Introduction">
+    <svg class="hero-signal" viewBox="0 0 460 520" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#2AA39D" stroke-width="1" opacity="0.5">
+        <path d="M40 70 L180 70 L180 170 L340 170"/>
+        <path d="M40 170 L120 170 L120 260 L340 260"/>
+        <path d="M40 270 L200 270 L200 350 L340 350"/>
+        <path d="M40 370 L150 370 L150 440 L340 440"/>
+      </g>
+      <g fill="#2AA39D">
+        <circle cx="40" cy="70" r="4"/>
+        <circle cx="40" cy="170" r="4"/>
+        <circle cx="40" cy="270" r="4"/>
+        <circle cx="40" cy="370" r="4"/>
+        <circle cx="340" cy="170" r="5" opacity="0.9"/>
+        <circle cx="340" cy="260" r="5" opacity="0.9"/>
+        <circle cx="340" cy="350" r="5" opacity="0.9"/>
+        <circle cx="340" cy="440" r="5" opacity="0.9"/>
+      </g>
+    </svg>
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Technology Strategy &amp; Transformation — Healthcare · FinTech</p>
+        <h1>Shri Prakash Singh, Ph.D.</h1>
+        <p class="role">Senior Leader, Software Engineering — AI Enablement &amp; Technology Transformation, Cigna Group / Evernorth Health Services</p>
+        <p class="lede">20+ years translating AI, cloud, and platform strategy into executive-level roadmaps and measurable outcomes — across regulated healthcare and financial services environments[...]
+        <div class="hero-actions">
+          <a class="btn-primary" href="#experience">View Experience</a>
+          <a class="btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <div class="stat-band">
+        <div>
+          <div class="stat-num mono">20+</div>
+          <div class="stat-label">Years leading enterprise technology strategy</div>
+        </div>
+        <div>
+          <div class="stat-num mono">$5M</div>
+          <div class="stat-label">Cost savings delivered via AI-driven automation</div>
+        </div>
+        <div>
+          <div class="stat-num mono">75%</div>
+          <div class="stat-label">Digital adoption achieved in a regulated environment</div>
+        </div>
+        <div>
+          <div class="stat-num mono">$500M</div>
+          <div class="stat-label">Revenue synergies from post-merger tech integration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="section-num">01 — Profile</p>
+        <h2>A trusted advisor at the intersection of strategy and delivery</h2>
+        <p>Technology Strategy &amp; Transformation Leader with 20+ years of experience driving enterprise technology strategy and leading large-scale digital, cloud, and AI-enabled transformations ac[...]
+        <p>Trusted technology advisor to business leaders, with deep expertise operating in global, highly matrixed, and regulated environments. Recognized for influencing portfolio strategy, aligning[...]
+      </div>
+      <div>
+        <p class="about-label">Certifications</p>
+        <ul class="cert-list">
+          <li>AWS Certified</li>
+          <li>AZ-900</li>
+          <li>SAFe PM/PO</li>
+          <li>SP SAFe 5</li>
+          <li>PSPO</li>
+          <li>CSM</li>
+          <li>CSTM</li>
+          <li>ISTQB</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-num">02 — Expertise</p>
+        <h2>Core competencies</h2>
+        <p>Strategic and operating disciplines applied across enterprise transformation programs.</p>
+      </div>
+      <div class="tag-grid">
+        <span class="tag">Enterprise Technology Strategy</span>
+        <span class="tag">AI Strategy &amp; Adoption</span>
+        <span class="tag">Digital Transformation</span>
+        <span class="tag">Cloud Transformation</span>
+        <span class="tag">Platform Modernization</span>
+        <span class="tag">Executive Communication</span>
+        <span class="tag">Board-Level Presentations</span>
+        <span class="tag">Strategic Planning</span>
+        <span class="tag">Investment Prioritization</span>
+        <span class="tag">Operating Model Design</span>
+        <span class="tag">Delivery Strategy</span>
+        <span class="tag">Cross-Functional Leadership</span>
+        <span class="tag">Matrixed Organization Leadership</span>
+        <span class="tag">Responsible AI</span>
+        <span class="tag">Cybersecurity &amp; Risk Management</span>
+        <span class="tag">Product Management</span>
+        <span class="tag">Portfolio Management</span>
+        <span class="tag">SAFe Agile</span>
+        <span class="tag">Vendor Management</span>
+        <span class="tag">Managed Services</span>
+        <span class="tag">Strategic Partnerships</span>
+        <span class="tag">IT Budgeting &amp; Cost Optimization</span>
+        <span class="tag">Workforce Strategy</span>
+        <span class="tag">M&amp;A Technology Integration</span>
+        <span class="tag">Global Capability Centers (GCC)</span>
+      </div>
+
+      <div class="tech-groups">
+        <div class="tech-card">
+          <h3>Cloud &amp; Architecture</h3>
+          <p>AWS, Azure, OpenShift, Microservices Architecture, API-First Design</p>
+        </div>
+        <div class="tech-card">
+          <h3>Data &amp; AI / ML</h3>
+          <p>Microsoft 365 Copilot, Kore.ai, Cursor AI, Generative AI, AI/ML, NLP, Prompt Engineering, Snowflake, Apache Kafka, Cassandra, Power BI, Tableau</p>
+        </div>
+        <div class="tech-card">
+          <h3>Enterprise Applications</h3>
+          <p>Salesforce, ServiceNow, Pega, Guidewire, Genesys, Okta, SAP, Oracle ERP, Workday</p>
+        </div>
+        <div class="tech-card">
+          <h3>Healthcare &amp; Regulated Systems</h3>
+          <p>FHIR, HL7, Electronic Health Records (EHR), Pharmacy Benefit Management (PBM), Prior Authorization, Compliance Systems</p>
+        </div>
+        <div class="tech-card">
+          <h3>Financial Systems &amp; Payments</h3>
+          <p>Banking as a Service (BaaS), Payments Processing, Fraud Detection, Risk Management, Disputes Management, ISO 8583</p>
+        </div>
+        <div class="tech-card">
+          <h3>DevOps, Delivery &amp; Leadership</h3>
+          <p>SAFe Agile, CI/CD Pipelines, DevOps, Automation, Global Capability Centers, Vendor &amp; Outsourcing Strategy, Talent Development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="section-num">03 — Career</p>
+        <h2>Experience</h2>
+        <p>Two decades of progressively senior technology leadership, from delivery to enterprise strategy.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item tl-current">
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="tl-meta">
+            <h3 class="tl-role">Senior Leader — Software Engineering (AI Enablement &amp; Tech Transformation)</h3>
+            <span class="tl-dates">MAR 2023 — PRESENT</span>
+          </div>
+          <p class="tl-org">Cigna Group / Evernorth Health Services — Cincinnati, OH</p>
+          <ul class="tl-bullets">
+            <li>Directed enterprise technology strategy and digital transformation, integrating AI-driven decision automation and FHIR-compliant interoperability to modernize case operations — reduc[...]
+            <li>Led large-scale platform modernization and AI-enabled transformation programs, expanding electronic prior authorization (ePA) capabilities through intelligent automation and generative[...]
+            <li>Defined and executed a multi-year enterprise technology roadmap, aligning architecture, workforce strategy, and investment planning with business and regulatory requirements.</li>
+            <li>Shaped operating model and portfolio delivery strategy, including global workforce design, vendor strategy, and governance across onshore teams and offshore Global Capability Centers.<[...]
+            <li>Led data engineering and API platform teams to build a clinical orchestration service layer integrating Epic Systems and Salesforce Health Cloud.</li>
+            <li>Orchestrated migration of legacy platforms to cloud-native architecture using Red Hat OpenShift and AWS.</li>
+            <li>Contributed to enterprise AI strategy — identifying high-value use cases, developing cross-functional roadmaps, and embedding responsible AI practices organization-wide.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="tl-meta">
+            <h3 class="tl-role">Director — Software Engineering (FinTech Transformation)</h3>
+            <span class="tl-dates">APR 2018 — MAR 2023</span>
+          </div>
+          <p class="tl-org">FIS / Worldpay — Cincinnati, OH</p>
+          <ul class="tl-bullets">
+            <li>Led enterprise-scale digital and AI-driven transformation of customer engagement platforms, implementing cloud-based NLP IVR solutions (Nuance, NICE CXone) and AI-powered chatbots to r[...]
+            <li>Directed modernization of core technology platforms — Salesforce Classic to Lightning, monolithic APIs to microservices, and NLP-enabled self-service channels.</li>
+            <li>Led implementation of fraud and dispute management platforms using Pega, integrating FeatureSpace and Signifyd for card and eCommerce fraud prevention.</li>
+            <li>Contributed to Banking-as-a-Service (BaaS) strategy, leading engineering teams supporting core banking deposit platforms for community banks.</li>
+            <li>Supported post-merger technology integration across Vantiv, Worldpay, and Mercury Payment Systems, contributing to ~$500M in revenue synergies.</li>
+            <li>Delivered complex technology portfolios ($1M–$10M+) using SAFe Agile across globally distributed engineering teams.</li>
+            <li>Established innovation labs and led POC/POV initiatives across AI/ML, automation, Salesforce, Pega, and microservices.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="tl-meta">
+            <h3 class="tl-role">Manager — Software Engineering (Consulting Delivery &amp; Program Leadership)</h3>
+            <span class="tl-dates">SEP 2007 — MAR 2018</span>
+          </div>
+          <p class="tl-org">Cognizant Technology Solutions</p>
+          <ul class="tl-bullets">
+            <li>Delivered large-scale technology consulting engagements across travel, retail, and financial services clients, leading global engineering teams in complex, matrixed environments.</li>
+            <li>Managed cross-functional teams of 50+ resources across onsite, nearshore, and offshore models.</li>
+            <li>Developed executive-level portfolio roadmaps, including milestones, dependencies, financial forecasts, and risk management strategies.</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-node" aria-hidden="true"></div>
+          <div class="tl-meta">
+            <h3 class="tl-role">System Engineer</h3>
+            <span class="tl-dates">DEC 2005 — SEP 2007</span>
+          </div>
+          <p class="tl-org">IBM India Pvt. Ltd. — Kolkata, India</p>
+          <ul class="tl-bullets">
+            <li>Delivered SAP techno-functional solutions across SD, FICO, HRM, P2P, O2C, CS, and APO modules.</li>
+            <li>Contributed to implementation and support of enterprise ERP systems, ensuring system reliability and data integrity.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="edu-cert" id="education">
+    <div class="wrap ec-grid">
+      <div>
+        <p class="section-num">04 — Education</p>
+        <h2 style="margin-bottom:24px;">Academic background</h2>
+        <div class="edu-item">
+          <p class="edu-degree">MIT Professional Education</p>
+          <p class="edu-school">Artificial Intelligence in Health Care</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">MIT Professional Education</p>
+          <p class="edu-school">Data Leadership: Leveraging Data, AI, and Cloud Computing</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">Ph.D., Business Administration</p>
+          <p class="edu-school">IIT (ISM) Dhanbad, India</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">M.S., Computer Science</p>
+          <p class="edu-school">Purvanchal University, India</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-degree">B.S., Mathematics</p>
+          <p class="edu-school">Purvanchal University, India</p>
+        </div>
+      </div>
+      <div>
+        <p class="section-num">&nbsp;</p>
+        <h2 style="margin-bottom:24px;">Certifications</h2>
+        <div class="cert-badges">
+          <span class="badge">AWS Certified</span>
+          <span class="badge">AZ-900</span>
+          <span class="badge">SAFe PM/PO</span>
+          <span class="badge">SP SAFe 5</span>
+          <span class="badge">PSPO</span>
+          <span class="badge">CSM</span>
+          <span class="badge">CSTM</span>
+          <span class="badge">ISTQB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Let's talk strategy.</h2>
+      <p>Open to Technology Strategy, Digital Transformation, and AI Enablement leadership roles in healthcare and financial services.</p>
+    </div>
+    <div>
+      <ul class="contact-list">
+        <li><a href="mailto:spvatsa@gmail.com"><span class="k">Email</span> spvatsa@gmail.com</a></li>
+        <li><a href="tel:+15163051324"><span class="k">Phone</span> 516.305.1324</a></li>
+        <li><a href="https://www.linkedin.com/in/spvatsa/" target="_blank" rel="noopener"><span class="k">LinkedIn</span> linkedin.com/in/spvatsa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Shri Prakash Singh, Ph.D.</span>
+    <span>Cincinnati, OH</span>
+  </div>
+</footer>
+
+</body>
+</html>
